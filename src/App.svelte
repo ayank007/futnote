@@ -1,45 +1,27 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+    import { Router, Route } from "svelte-navigator";
+    
+    import Navbar from './lib/components/Navbar.svelte'
+    import Header from "./lib/components/Header.svelte"
+
+    import Home from './lib/pages/Home.svelte'
+    import Lineup from './lib/pages/Lineup.svelte'
+    import Competition from './lib/pages/Competition.svelte'
+    import TierGame from './lib/pages/TierGame.svelte'
+    import Compare from './lib/pages/Compare.svelte'
+
+    let currentPage = "Home"
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1 class="text-red-400">Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+<Header />
+<Router>
+    <Route path='/' component={Home} />
+    <Route path='/lineup' component={Lineup} />
+    <Route path='/competition' component={Competition} />
+    <Route path='/tiergame' component={TierGame} />
+    <Route path='/compare' component={Compare} />
+</Router>
+<Navbar currentPage={currentPage} />
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
 </style>
