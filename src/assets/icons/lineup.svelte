@@ -1,7 +1,7 @@
 <script>
     export let fill = "#181818"
 </script>
-<svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg height="19" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="0.8" y="0.8" width="16.4" height="21.4" rx="1.2" stroke={fill} stroke-width="1.6"/>
     <line x1="1" y1="11.3201" x2="17" y2="11.3201" stroke={fill} stroke-width="1.6"/>
     <circle cx="9" cy="11.5" r="2.7" stroke={fill} stroke-width="1.6"/>

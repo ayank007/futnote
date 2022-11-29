@@ -46,7 +46,7 @@
 	})
 </script>
 
-<div id="Navbar" class="flex justify-around items-center mainContainer fixed bottom-0 left-0 w-full bg-white border-solid border-gray-300 border-t" style="height: 70px;">
+<div id="Navbar" class="mainContainer px-base h-16 z-50 flex justify-between items-center fixed bottom-0 left-0 w-full bg-white border-solid border-gray-300 border-t overflow-hidden">
     <Router>
         <div class="nav">
             <Link to='/'>
@@ -78,24 +78,33 @@
 
 <style lang="scss">
     .nav{
+        flex-grow: 1;
         cursor: pointer;
-        
-    }
-    .nav::before{
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(circle, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%);
-        z-index: -1;
-        opacity: 0;
-        transition: 0.3s;
-    }
-    .nav:hover::before{
-        opacity: 1;
+        height: 100%;
+        > :global(a){
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 70%, rgba(255,255,255,1) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        &:hover::before{
+            opacity: 1;
+        }
     }
 </style>

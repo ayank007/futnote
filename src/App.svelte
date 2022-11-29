@@ -4,7 +4,7 @@
     import Navbar from './lib/components/Navbar.svelte'
     import Header from "./lib/components/Header.svelte"
 
-    import Home from './lib/pages/Home.svelte'
+    import Home from './lib/pages/Home/index.svelte'
     import Lineup from './lib/pages/Lineup.svelte'
     import Competition from './lib/pages/Competition.svelte'
     import TierGame from './lib/pages/TierGame.svelte'
@@ -21,6 +21,9 @@
     <Route path='/tiergame' component={TierGame} />
     <Route path='/compare' component={Compare} />
 </Router>
+<br /><br />
+<br /><br />
+<br /><br />
 <Navbar currentPage={currentPage} />
 
 <style>
