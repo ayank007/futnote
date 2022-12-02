@@ -1,10 +1,10 @@
 <script>
-    import menu from '../../../assets/icons/menu.svg'
+    import Menu from '../../../assets/icons/menu.svelte'
 </script>
 
 <div class="profile">
     <div class="menu">
-        <img src={menu} alt="menu">
+        <Menu />
     </div>
     <div class="details1">
         <div class="icon">A</div>

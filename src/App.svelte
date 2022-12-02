@@ -5,7 +5,7 @@
     import Header from "./lib/components/Header.svelte"
 
     import Home from './lib/pages/Home/index.svelte'
-    import Lineup from './lib/pages/Lineup.svelte'
+    import Lineup from './lib/pages/Lineup/Lineup.svelte'
     import Competition from './lib/pages/Competition.svelte'
     import TierGame from './lib/pages/TierGame.svelte'
     import Compare from './lib/pages/Compare.svelte'
