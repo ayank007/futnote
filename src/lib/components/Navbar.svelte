@@ -15,39 +15,62 @@
 
     let homeFill, lineupFill, tiergameFill, compareFill, competitionFill 
     homeFill = lineupFill = tiergameFill = compareFill = competitionFill = themeDark
+    homeFill = themeGreen
 
-    switch (currentPage) {
-        case 'Home':
-            homeFill = themeGreen
-            break
-        case 'Lineup':
-            lineupFill = themeGreen
-            break
-        case 'TierGame':
-            tiergameFill = themeGreen
-            break
-        case 'Compare':
-            compareFill = themeGreen
-            break
-        case 'Competition':
-            competitionFill = themeGreen
-            break
-        default:
-            homeFill = themeGreen
-            break
-    }
+    // switch (currentPage) {
+    //     case 'Home':
+    //         homeFill = themeGreen
+    //         break
+    //     case 'Lineup':
+    //         lineupFill = themeGreen
+    //         break
+    //     case 'TierGame':
+    //         tiergameFill = themeGreen
+    //         break
+    //     case 'Compare':
+    //         compareFill = themeGreen
+    //         break
+    //     case 'Competition':
+    //         competitionFill = themeGreen
+    //         break
+    //     default:
+    //         homeFill = themeGreen
+    //         break
+    // }
 
     onMount(async () => {
         document.querySelectorAll('.nav').forEach((nav)=>{
             nav.addEventListener('click', ()=>{
-                console.log('hello')
+                let page = nav.querySelector('a').getAttribute('href').split('/')[2]
+                homeFill = lineupFill = tiergameFill = compareFill = competitionFill = themeDark
+                if (page) {
+                    switch(page) {
+                        case 'lineup':
+                            lineupFill = themeGreen
+                            break
+                        case 'tiergame':
+                            tiergameFill = themeGreen
+                            break
+                        case 'compare':
+                            compareFill = themeGreen
+                            break
+                        case 'competition':
+                            competitionFill = themeGreen
+                            break
+                        default:
+                            homeFill = themeGreen
+                            break
+                    }
+                } else {
+                    homeFill = themeGreen
+                }
             })
         })
 	})
 </script>
 
 <div id="Navbar" class="mainContainer px-base h-16 z-50 flex justify-between items-center fixed bottom-0 left-0 w-full bg-white border-solid border-gray-300 border-t overflow-hidden">
-    <Router>
+    <Router basepath="/futnote">
         <div class="nav">
             <Link to='/'>
                 <IconHome fill={homeFill} />

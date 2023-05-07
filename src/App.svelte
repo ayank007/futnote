@@ -14,7 +14,7 @@
 </script>
 
 <Header />
-<Router>
+<Router basepath="/futnote">
     <Route path='/' component={Home} />
     <Route path='/lineup' component={Lineup} />
     <Route path='/competition' component={Competition} />
