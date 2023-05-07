@@ -3,10 +3,18 @@
     import Player from "../Lineup/player.svelte"
 </script>
 
-<div class="CreateLineup">
+<div class="CreateLineup banner">
     <h2>Create your <br /> line-up</h2>
     <Lineup1 />
-    <Player name="GOAT" num={7} jersey="portugal2022" />
+    <div class="player1">
+        <Player name="GOAT" num={7} jersey="portugal2022" />
+    </div>
+    <div class="player2">
+        <Player name="LION" num={9} jersey="yellow" />
+    </div>
+    <div class="player3">
+        <Player name="SNIPER" num={8} jersey="germany2014" />
+    </div>
 </div>
 
 <style lang="scss">
@@ -14,13 +22,12 @@
         height: 264px;
         background-color: #74E9F8;
         padding: 15px;
-        border-radius: 20px;
         overflow: hidden;
+        color: #0991A3;
         h2{
             font-size: 18px;
             margin-left: 10px;
             font-weight: bold;
-            color: #0991A3;
         }
         > :global(.lineup1){
             --lineup1Color: #B9F7FF !important;
@@ -29,9 +36,20 @@
             margin-top: 15px;
             margin-left: 15px;
         }
-        > :global(.player){
-            top: 0;
-            left: 0;
+        .player1{
+            position: absolute;
+            top: 115px;
+            left: 40px;
+        }
+        .player2{
+            position: absolute;
+            top: 90px;
+            left: 125px;
+        }
+        .player3{
+            position: absolute;
+            top: 200px;
+            left: 80px;
         }
     }
 </style>

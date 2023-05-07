@@ -2,7 +2,7 @@
     import LeaguePosition from '../../../assets/icons/leaguePosition.svelte' 
 </script>
 
-<div class="predictLeagueBanner">
+<div class="predictLeagueBanner banner">
     <h2>Predict League</h2>
     <div class="leagueTable">
         <div class="heading">
@@ -70,7 +70,6 @@
     .predictLeagueBanner{
         background-color: #FF9836;
         padding: 15px;
-        border-radius: 20px;
         height: 190px;
         overflow: hidden;
         h2{
